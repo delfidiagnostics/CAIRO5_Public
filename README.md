@@ -119,7 +119,7 @@ Further users will need to modify the `setwd()` commands at the top of each scri
 ## Score Descriptions
 
 ### ichorCNA
-ichorCNA values were calculated for all 689 samples on study + 153 healthy controls using default parameters, with the exception that the tumor fraction parameter for the EM step was tuned to account for low ctDNA samples `--normal "c(0.5,0.6,0.7,0.8,0.9,0.95,.96,.97,0.98,0.99,0.995,0.999)"`. The panel of normals was derived from 30 healthy samples from (cristiano et al.)[https://pubmed.ncbi.nlm.nih.gov/31142840/]
+ichorCNA values were calculated for all 689 samples on study + 153 healthy controls using default parameters, with the exception that the tumor fraction parameter for the EM step was tuned to account for low ctDNA samples `--normal "c(0.5,0.6,0.7,0.8,0.9,0.95,.96,.97,0.98,0.99,0.995,0.999)"`. The panel of normals was derived from 30 healthy samples from [cristiano et al.](https://pubmed.ncbi.nlm.nih.gov/31142840/)
 
 ### ddPCR
 ddPCR values were obtained from the MT arm of the CAIRO5 study for tissue confirmed RAS/BRAF mutations using BIO-RAD kits #1863506, #12001626, #10049550, #10049047, #12001627, #12001006, #12001037
