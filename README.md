@@ -60,7 +60,7 @@ This repository holds the analysis scripts for the Nature Communication manuscri
 * FigS4B - Boxplots comparing DELFI-TF v MAF v ichorCNA performance
 
 * FigS5A - Comparison of single patient copy number calls to fragment ratios
-- Omitted
+  - Omitted
 
 * FigS5B - Comparison of DELFI-TF and MAF to copy number calls for presumed amplified and deleted regions.
 
