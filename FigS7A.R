@@ -43,7 +43,7 @@ finalData <- finalData[`Study Arm` == 1 & `Sample Time Point` == 'T0']
 finalData[,progressionStatus := ifelse(`Progression Status (0=no progression; 1=progression)` == 1, 'Ever Progressor', 'Never Progressor')]
 
 # change col name to fit on plot later
-setnames(finalData, "Sum of the Largest Diameters", "Sum of the\nLongest Diameters")
+setnames(finalData, "Sum of the Longest Diameters", "Sum of the\nLongest Diameters")
 
 # melt the data into a long format for plotting
 finalData <- melt(finalData, measure.vars=c("DELFI-TF", "MAF", "Sum of the\nLongest Diameters"))

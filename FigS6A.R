@@ -38,7 +38,7 @@ finalData <- merge(finalData, SumOfLongestDiameters, by=c('Subject ID', 'Sample 
 
 # restrict to arm1 baseline samples, and make sure everything has a value
 finalData <- finalData[`Study Arm` == 1 & `Sample Time Point` == 'T0']
-finalData <- finalData[!(is.na(`DELFI-TF`) | is.na(MAF) | is.na(`Sum of the Largest Diameters`))]
+finalData <- finalData[!(is.na(`DELFI-TF`) | is.na(MAF) | is.na(`Sum of the Longest Diameters`))]
 
 # melt the data into the expected format
 finalData <- melt(finalData, measure.vars=c("DELFI-TF", "MAF"))
@@ -56,8 +56,8 @@ relabel_p <- function(x){
 }
 
 # correlation
-delfiStat <- cor.test(finalData[variable == 'DELFI-TF']$value, finalData[variable == 'DELFI-TF']$`Sum of the Largest Diameters`)
-mafStat <- cor.test(finalData[variable == 'MAF']$value, finalData[variable == 'MAF']$`Sum of the Largest Diameters`)
+delfiStat <- cor.test(finalData[variable == 'DELFI-TF']$value, finalData[variable == 'DELFI-TF']$`Sum of the Longest Diameters`)
+mafStat <- cor.test(finalData[variable == 'MAF']$value, finalData[variable == 'MAF']$`Sum of the Longest Diameters`)
 
 # labels
 delfiStat <- paste0("r=", signif(delfiStat$estimate, 2), "\n", relabel_p(delfiStat$p.value))
@@ -73,7 +73,7 @@ statDT <- data.table(variable=c('DELFI-TF', 'MAF'),
 ############ Construct Plot ####################################################
 
 # plot
-FigS6A <- ggplot(finalData, aes(x=`Sum of the Largest Diameters`, y=value, color=variable)) +
+FigS6A <- ggplot(finalData, aes(x=`Sum of the Longest Diameters`, y=value, color=variable)) +
   geom_point(size=5, alpha=.65) +
   geom_smooth(method="lm", alpha=.1) +
   geom_text(data=statDT, mapping=aes(x=x, y=y, label=label, color=variable), size=14, key_glyph="point") +

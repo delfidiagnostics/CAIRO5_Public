@@ -50,7 +50,7 @@ finalData[,`Primary Tumor Sidedness` := factor(`Primary Tumor Sidedness`, levels
 
 # calculate hazard ratio
 finalData <- na.omit(finalData)
-coxMultivariate <- summary(coxph(Surv(`OS Registration`, `OS Status (0=alive; 1=death)`) ~ `Age Bin` + `Sum of the Largest Diameters` + CEA + `DELFI-TF` + `Primary Tumor Sidedness`, data = finalData))
+coxMultivariate <- summary(coxph(Surv(`OS Registration`, `OS Status (0=alive; 1=death)`) ~ `Age Bin` + `Sum of the Longest Diameters` + CEA + `DELFI-TF` + `Primary Tumor Sidedness`, data = finalData))
 coxMultivariate
 
 # make a DT
